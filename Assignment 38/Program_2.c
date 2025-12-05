@@ -1,0 +1,52 @@
+
+////////////////////////////////////////////////////////////////////////
+//
+//  Required Header Files
+//
+////////////////////////////////////////////////////////////////////////
+
+#include <stdio.h>
+
+////////////////////////////////////////////////////////////////////////
+//
+//  Function Name   :   strcpyX
+//  Description     :   Used to remove white spaces in string
+//  Input           :   String
+//  Output          :   String
+//  Author          :   Prathamesh Rajesh Bawane
+//  Date            :   05/12/0/2025
+//
+////////////////////////////////////////////////////////////////////////
+
+void strcpyX(char * str, char * dest)
+{
+    while(*str != '\0')
+    {
+        if(*str != ' ')
+        {
+            *dest = *str;
+            dest++;
+        }
+        str++;
+    }
+
+    *dest = '\0';
+}
+
+////////////////////////////////////////////////////////////////////////
+//
+//  Entry point function : Main
+//
+////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+    char arr [30] = "Marvel lous Pyth on";
+    char brr [30] = {'\0'};
+
+    strcpyX(arr , brr);
+
+    printf("%s", brr);
+
+    return 0;
+}

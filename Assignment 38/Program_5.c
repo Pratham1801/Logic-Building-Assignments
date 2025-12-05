@@ -1,0 +1,59 @@
+////////////////////////////////////////////////////////////////////////
+//
+//  Required Header Files
+//
+////////////////////////////////////////////////////////////////////////
+
+#include <stdio.h>
+
+////////////////////////////////////////////////////////////////////////
+//
+//  Function Name   :   strcpytoggle
+//  Description     :   used to convert small characters to capital and capital to small character for string
+//  Input           :   String
+//  Output          :   String
+//  Author          :   Prathamesh Rajesh Bawane
+//  Date            :   05/12/2025
+//
+////////////////////////////////////////////////////////////////////////
+
+void strcpytoggle(char * str, char * dest)
+{
+    while(*str != '\0')
+    {
+        if(*str >= 'A' && *str <= 'Z')
+        {
+            *dest = *str + 32;
+        }
+        else if(*str >= 'a' && *str <= 'z')
+        {
+            *dest = *str - 32;
+        }
+        else
+        {
+            *dest = *str;
+        }
+
+        dest++;
+        str++;
+    }
+    *dest = '\0';
+}
+
+////////////////////////////////////////////////////////////////////////
+//
+//  Entry point function : Main
+//
+////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+    char arr [30] = "Marvellous Python 2";
+    char brr [30] = {'\0'};
+
+    strcpytoggle(arr , brr);
+
+    printf("%s", brr);
+
+    return 0;
+}
